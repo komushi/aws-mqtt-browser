@@ -1,5 +1,6 @@
 {
   "name": "aws-mqtt-browser",
+  "version": "0.0.1",
   "description": "AWS IoT MQTT broker client for browser",
   "main": "lib/aws-mqtt-browser.js",
   "authors": [
