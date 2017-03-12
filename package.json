@@ -1,0 +1,41 @@
+{
+  "name": "aws-mqtt-browser",
+  "version": "0.0.1",
+  "description": "AWS IoT MQTT broker client for browser",
+  "keywords": [
+    "aws",
+    "iot",
+    "mqtt",
+    "client",
+    "stream",
+    "websocket"
+  ],
+  "author": "Lei Xu <komushi@gmail.com>",
+  "license": "MIT",
+  "main": "lib/aws-mqtt-browser.js",
+  "directories": [
+    "examples",
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/komushi/aws-mqtt-browser.git"
+  },
+  "scripts": {
+    "compile": "rm -rf lib && babel --presets es2015 -d lib src",
+    "build": "browserify ./lib/index.js -o ./lib/aws-mqtt-browser.js -s AWSMqtt"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0"
+  },
+  "dependencies": {
+    "aws-signature-v4": "^1.0.1",
+    "mqtt": "^2.0.0",
+    "mqtt-websocket-stream": "^0.1.2"
+  },
+  "peerDependencies": {
+    "aws-sdk": "^2.6.3"
+  }
+}

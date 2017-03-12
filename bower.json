@@ -1,0 +1,25 @@
+{
+  "name": "aws-mqtt-browser",
+  "description": "AWS IoT MQTT broker client for browser",
+  "main": "lib/aws-mqtt-browser.js",
+  "authors": [
+    "Lei Xu <komushi@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "aws",
+    "iot",
+    "mqtt",
+    "client",
+    "stream",
+    "websocket"
+  ],
+  "homepage": "https://github.com/komushi/aws-mqtt-browser",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
