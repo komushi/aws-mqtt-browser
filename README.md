@@ -1,4 +1,4 @@
-# AWS Websocket Pub/Sub client - browserified and babelified version
+# AWS Websocket MQTT client - browserified and babelified version
 
 ## Build from ES2016 and node.js module to browser-enabled ES5 module
 ```
