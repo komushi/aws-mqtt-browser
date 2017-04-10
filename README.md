@@ -1,13 +1,22 @@
-# AWS Websocket MQTT client - browserified and babelified version
+# AWS IoT MQTT client library - browserified and babelified version
+## Credits
+Based on [AWS Websocket Pub/Sub client](https://github.com/kmamykin/aws-mqtt).
 
-## Build from ES2016 and node.js module to browser-enabled ES5 module
+----
+
+## 1. Installation
+### Install via Bower:
 ```
-$ npm run compile
-$ npm run build
+$ bower install aws-mqtt-browser
 ```
 
+## 2. Usages
+### 2-1. Add dependencies to your HTML file
+```html
+<script src="bower_components/aws-mqtt-browser/lib/aws-mqtt-browser.js"></script>
+```
 
-## Basic usage
+## 2-2. Basic usage
 
 ```
 <html>
@@ -43,13 +52,15 @@ $ npm run build
 </html>
 ```
 
-## Installing it from bower
+----
 
-````
-$ bower install aws-mqtt-browser
-````
+## Build from ES2016 and node.js module to browser-enabled ES5 module
+```
+$ npm run compile
+$ npm run build
+```
 
-### Complete [MQTT.js API](https://github.com/mqttjs/MQTT.js#api)
+----
 
-## Credits
-Based on [AWS Websocket Pub/Sub client](https://github.com/kmamykin/aws-mqtt).
+## Reference [MQTT.js API](https://github.com/mqttjs/MQTT.js#api)
+
