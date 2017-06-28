@@ -1,0 +1,42 @@
+
+<html>
+  <body>
+		<script src="https://cdn.rawgit.com/komushi/aws-mqtt-browser/master/lib/aws-mqtt-browser.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.48.0/aws-sdk.min.js"></script>
+		
+
+		<script type="text/javascript">
+
+		AWS.config.region = 'ap-northeast-1';
+		const credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'ap-northeast-1:b0ea8e9d-0401-434f-a295-2b201efdfb97'});
+
+		// var credentials = 
+		// 	{
+		// 		accessKeyId: '<yourkey>', 
+		// 		secretAccessKey: '<yoursecret>',
+		// 		get: (callback) =>  {
+		// 		  callback();
+		// 		}
+		// 	};
+
+		const client = AWSMqtt.connect({
+		  WebSocket: window.WebSocket, 
+		  region: 'ap-northeast-1',
+		  credentials: credentials,
+		  endpoint: 'a2sdpyfw66qrvw.iot.ap-northeast-1.amazonaws.com', // NOTE: get this value with `aws iot describe-endpoint`
+		  clientId: 'mqtt-client-' + (Math.floor((Math.random() * 100000) + 1)), // clientId to register with MQTT broker. Need to be unique per client
+		});
+
+		client.on('connect', (packet) => {
+			console.log('connected', packet);	
+		  client.subscribe('iotbutton/001')
+		  client.subscribe('iotbutton/002')
+		});
+		client.on('message', (topic, message) => {
+		  console.log(topic, message.toString('utf-8'));
+		  
+		});
+
+		</script> 
+  </body>
+</html>

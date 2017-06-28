@@ -21,19 +21,25 @@ $ bower install aws-mqtt-browser
 ```
 <html>
   <body>
-    <script src="./aws-mqtt-browser.js"></script>
+    <script src="bower_components/aws-mqtt-browser/lib/aws-mqtt-browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.48.0/aws-sdk.min.js"></script>
 
     <script type="text/javascript">
+    // create your own unauthz congniton identity credential pool id
+    AWS.config.region = 'ap-northeast-1';
+    const credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: '<region>:<identityPoolId>'});
+
     const client = AWSMqtt.connect({
       WebSocket: window.WebSocket, 
       region: 'ap-northeast-1',
-      credentials: {
-        accessKeyId: 'AKIAI5C4S123243243', 
-        secretAccessKey: 'dsfdsfdsf342+g0NYDqowUICmHVa;;Syjgb2323zDkCa',
-        get: (callback) =>  {
-          callback();
-        }
-      },
+//      credentials: {
+//      accessKeyId: '<yourkey>', 
+//      secretAccessKey: '<yoursecret>',
+//        get: (callback) =>  {
+//          callback();
+//        }
+//      },
+      credentials: credentials,
       endpoint: 'a2sdpyfw66qrvw.iot.ap-northeast-1.amazonaws.com', // NOTE: get this value with `aws iot describe-endpoint`
       clientId: 'mqtt-client-' + (Math.floor((Math.random() * 100000) + 1)), // clientId to register with MQTT broker. Need to be unique per client
     });
